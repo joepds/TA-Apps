@@ -26,13 +26,13 @@ export async function POST(req: Request) {
 
         const prompt = {
             role: "system",
-            content: `You are a question generator. Generate questions only based on what is in 
+            content: `You are a question generator. Generate questions minimum three question only based on what is in 
             START CONTEXT BLOCK
             ${context}
-            END OF CONTEXT BLOCK
             from the provided/uploaded PDF. 
             If the ${context} does not provide the information for the user prompt, 
             the AI will respond, "I'm sorry, but that information is not in the PDF."
+            END OF CONTEXT BLOCK
             `,
         };
 

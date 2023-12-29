@@ -25,7 +25,7 @@ const ChatSideBar = ({ chats, chatId}: Props) => {
                 </Button>
             </Link>
 
-            <div className="flex h-screen overflow-hidden pb-20 flex-col gap-2 mt-4">
+            <div className="flex h-screen overflow-scroll pb-20 flex-col gap-2 mt-4">
                 {chats.map((chat) => (
                     <Link key={chat.id} href={`/chat/${chat.id}`}>
                         <div
@@ -35,7 +35,7 @@ const ChatSideBar = ({ chats, chatId}: Props) => {
                             })}
                         >
                             <MessageCircle className="mr-2" />
-                            <p className="w-full overflow-hidden text-sm truncate whitespace-nowrap text-ellipsis">
+                            <p className="w-full overflow-scroll text-sm truncate whitespace-nowrap text-ellipsis">
                                 {chat.pdfName}
                             </p>
                         </div>

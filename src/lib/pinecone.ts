@@ -42,13 +42,23 @@ export async function loadS3IntoPinecone(fileKey: string) {
     const vectors = await Promise.all(
         documents.flat().map((doc) => embedDocument(doc, fileKey))
     );
-    
+
     // 4. upload to pinecone
     const client = await getPineconeClient();
     const pineconeIndex = await client.index("ta-apps");
 
     console.log("Inserting vectors into pinecone");
-    const request = vectors;
+    const request = vectors.map((vector) => {
+        const asciiFileKey = convertToAscii(fileKey);
+        return {
+            id: vector.id,
+            values: vector.values,
+            metadata: {
+                ...vector.metadata,
+                fileKey: asciiFileKey,
+            },
+        } as PineconeRecord;
+    });
     await pineconeIndex.upsert(request);
     console.log("Inserted vectors into pinecone");
 

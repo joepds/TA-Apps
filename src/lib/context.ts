@@ -39,6 +39,17 @@ export async function getContext(query: string, fileKey: string) {
     };
 
     let docs = qualifyingDocs.map((match) => (match.metadata as Metadata).text);
-    // 5 vectors
-    return docs.join("\n").substring(0, 3000);
+
+    const selectedVectors = qualifyingDocs.map((match) => match.metadata);
+
+    console.log("\nSelected Documents:");
+    console.log(qualifyingDocs.map((match) => (match.metadata as Metadata).text).join("\n").substring(0, 3000));
+
+    console.log("\nSelected Vectors:");
+
+    qualifyingDocs.forEach((match, index) => {
+        // Tampilkan seluruh objek hasil pencarian
+        console.log(`Full Match ${index + 1}:`, match);
+    });
+
 }
