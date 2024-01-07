@@ -22,7 +22,8 @@ export default async function Home() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col items-center text-center">
           <div className="flex items-center">
-            <h1 className="mr-3 text-5xl font-semibold">Chat with any PDF</h1>
+            <h1 className="mr-3 text-5xl font-semibold">
+              Generasi Pertanyaan dari PDF dengan OpenAI</h1>
             <UserButton afterSignOutUrl="/" />
           </div>
 
@@ -39,8 +40,8 @@ export default async function Home() {
           </div>
 
           <p className="max-w-xl mt-1 text-lg text-slate-600">
-            Join millions of students, researchers and professionals to instantly
-            answer questions and understand research with AI
+            Selamat datang di Platform Pembuat Pertanyaan! Di sini, Anda dapat dengan mudah membuat
+            pertanyaan yang relevan. Pastikan untuk mengunggah file PDF yang berukuran di bawah 10MB.
           </p>
 
           <div className="w-full mt-4">

@@ -6,14 +6,12 @@ import { Button } from "./ui/button";
 import { MessageCircle, PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-
-
 type Props = {
     chats: DrizzleChat[];
     chatId: number;
 };
 
-const ChatSideBar = ({ chats, chatId}: Props) => {
+const ChatSideBar = ({ chats, chatId }: Props) => {
     const [loading, setLoading] = React.useState(false);
 
     return (
@@ -42,8 +40,6 @@ const ChatSideBar = ({ chats, chatId}: Props) => {
                     </Link>
                 ))}
             </div>
-
-
         </div>
     );
 };
